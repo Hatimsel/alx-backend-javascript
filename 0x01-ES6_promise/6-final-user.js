@@ -6,14 +6,20 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     const promiseOne = await signUpUser(firstName, lastName);
     const promiseTwo = await uploadPhoto(fileName);
     const result = [];
-    promiseOne.then((data) => result.push({
+    promiseOne.then((data) => (promiseOne.state === 'fulfilled' ? result.push({
       status: promiseOne.state,
       value: data,
-    }));
-    promiseTwo.then((data) => result.push({
+    }) : result.push({
+      status: promiseOne.state,
+      value: new Error(''),
+    })));
+    promiseTwo.then((data) => (promiseTwo.state === 'fulfilled' ? result.push({
       status: promiseTwo.state,
       value: data,
-    }));
+    }) : result.push({
+      status: promiseTwo.state,
+      value: new Error(''),
+    })));
 
     return result;
   } catch (error) {
