@@ -13,7 +13,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     }
     return {
       status: result.status,
-      value: `Error: ${result.reason.message}`,
+      value: new Error(`${result.reason.message}`),
     };
   };
 
