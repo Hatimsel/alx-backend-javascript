@@ -12,10 +12,4 @@ export default class Building {
   get sqft() {
     return this._sqft;
   }
-
-  set sqft(sqft) {
-    this._sqft = typeof sqft === 'number' ? sqft : (() => {
-      throw new TypeError('sqft must be a number');
-    });
-  }
 }
