@@ -1,12 +1,11 @@
 export default class Building {
   constructor(sqft) {
+    this._sqft = sqft;
     if (this.constructor !== Building) {
       if (this.evacuationWarningMessage === undefined) {
-        throw Error('Class extending Building must ovverride evacuationWarningMessage');
+        throw new Error('Class extending Building must ovverride evacuationWarningMessage');
       }
     }
-
-    this._sqft = sqft;
   }
 
   get sqft() {
