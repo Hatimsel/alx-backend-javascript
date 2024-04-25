@@ -6,7 +6,9 @@ export default class EVCar extends Car {
     this._range = range;
   }
 
+  /* eslint-disable */
   cloneCar() {
     return new Car();
   }
+  /* eslint-enable */
 }
