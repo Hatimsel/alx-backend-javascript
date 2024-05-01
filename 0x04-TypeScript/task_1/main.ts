@@ -11,9 +11,13 @@ interface Directors  extends Teacher {
 	numberOfReports: number;
 };
 
-function printTeacher(firstName: string, lastName: string): string {
+interface printTeacherInterface {
+	(firstName: string, lastName: string): string;
+};
+
+const printTeacher: printTeacherInterface = (firstName, lastName) => {
 	return `${firstName.slice(0, 1)}. ${lastName}`;
-}
+};
 
 const teacher1: Teacher = {
 	firstName: 'John',
