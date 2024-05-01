@@ -1,6 +1,6 @@
 interface Teacher {
-	firstName: string;
-	lastName: string;
+	readonly firstName: string;
+	readonly lastName: string;
 	fullTimeEmployee: boolean;
 	yearsOfExperience?: number;
 	location: string;
@@ -10,6 +10,10 @@ interface Teacher {
 interface Directors  extends Teacher {
 	numberOfReports: number;
 };
+
+function printTeacher(firstName: string, lastName: string): string {
+	return `${firstName.slice(0, 1)}. ${lastName}`;
+}
 
 const teacher1: Teacher = {
 	firstName: 'John',
@@ -29,3 +33,5 @@ const director1: Directors = {
 
 console.log(teacher1);
 console.log(director1);
+
+console.log(printTeacher("John", "Doe"));
