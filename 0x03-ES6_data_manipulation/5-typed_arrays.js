@@ -6,7 +6,7 @@ export default function createInt8TypedArray(length, position, value) {
   try {
     typedArr.setInt8(position, value);
   } catch (error) {
-    console.log('Position outside range', error);
+    console.log('Position outside range');
   }
 
   return typedArr;
