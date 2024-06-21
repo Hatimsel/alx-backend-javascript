@@ -25,7 +25,8 @@ module.exports = function countStudents(path) {
 
     console.log(`Number of students: ${lines.length}`);
     for (const field in fields) {
-      console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field]}`);
+      const listOfStudents = fields[field].join(', ');
+      console.log(`Number of students in ${field}: ${fields[field].length}. List: ${listOfStudents}`);
     }
   } catch (err) {
     throw new Error('Cannot load the database');
