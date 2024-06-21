@@ -4,7 +4,7 @@ const countStudents = require('./3-read_file_async');
 
 const app = http.createServer((req, res) => {
   const reqUrl = url.parse(req.url, true);
-  const pathname = reqUrl.pathname;
+  const { pathname } = reqUrl;
 
   if (pathname === '/') {
     res.statusCode = 200;

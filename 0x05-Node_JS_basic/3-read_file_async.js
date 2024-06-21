@@ -23,14 +23,15 @@ function countStudents(path) {
       }
 
       const totalStudents = Object.values(fields).reduce((acc, curr) => acc + curr.length, 0);
-      console.log(`Number of students: ${totalStudents}`);
+      let result = `Number of students: ${totalStudents}\n`;
 
       for (const field in fields) {
         if (Object.prototype.hasOwnProperty.call(fields, field)) {
           const listOfStudents = fields[field].join(', ');
-          console.log(`Number of students in ${field}: ${fields[field].length}. List: ${listOfStudents}`);
+          result += `Number of students in ${field}: ${fields[field].length}. List: ${listOfStudents}\n`;
         }
       }
+      return result.trim();
     })
     .catch((err) => {
       console.error(err);
