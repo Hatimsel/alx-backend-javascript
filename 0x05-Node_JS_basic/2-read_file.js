@@ -24,10 +24,8 @@ function countStudents(path) {
       }
     }
   } catch (err) {
-    throw new Error('Cannot load the database', err);
+    throw new Error('Cannot load the database');
   }
 }
 
 module.exports = countStudents;
-
-// countStudents('database.csv');
