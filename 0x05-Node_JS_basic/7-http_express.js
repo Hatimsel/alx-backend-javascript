@@ -13,8 +13,7 @@ app.get('/students', async (req, res) => {
     res.set('Content-Type', 'text/plain');
     res.send(`This is the list of our students\n${result}`);
   } catch (err) {
-    res.status(500).send(err.toString());
-    console.log(err);
+    res.status(500).send('Cannot load the database');
   }
 });
 
